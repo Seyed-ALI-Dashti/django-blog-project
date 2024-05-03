@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}-T Blog{% endblock %}
+
+{% block content %}
+
+
+
+    <section id="welcome">
+        <header>
+            <img src="{% static 'blog/images/profile.jpg' %}" alt="-T Blog">
+            <h2>-T Blog Project</h2>
+        </header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, minima</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>Latest Posts</h2>
+        <ul>
+            {% for post in latest_post %}
+                {% include 'blog/includes/post.html' %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="details-post">
+        <h2>Detail Post of Blog</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam architecto assumenda blanditiis, dignissimos illum nemo non qui veniam voluptatum.</p>
+    </section>
+
+{% endblock %}
